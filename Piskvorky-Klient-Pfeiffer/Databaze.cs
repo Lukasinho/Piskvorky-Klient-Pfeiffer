@@ -13,18 +13,19 @@ namespace Piskvorky_Klient_Pfeiffer
     {
         private string ip;
         SqlConnection datovePripojeni = new SqlConnection();
-
         public Databaze(string ipadresa)
         {
             ip = ipadresa;
+
         }
+
 
         public void Pripojit()
         {
             try
             {
                 SqlConnectionStringBuilder konfigurace = new SqlConnectionStringBuilder();
-                konfigurace.DataSource = ".\\SQL2008R2";   //".\\SQLExpress";
+                konfigurace.DataSource = ".\\SQLExpress";
                 konfigurace.InitialCatalog = "Piskvorky";
                 konfigurace.IntegratedSecurity = true;
                 datovePripojeni.ConnectionString = konfigurace.ConnectionString;
@@ -32,7 +33,7 @@ namespace Piskvorky_Klient_Pfeiffer
             }
             catch (SqlException e)
             {
-                MessageBox.Show(String.Format("Chyba při vstupu do DB: {0}", e.Message));
+                MessageBox.Show("Chyba při vstupu do DB: {0}", e.Message);
             }
         }
 
@@ -94,7 +95,7 @@ namespace Piskvorky_Klient_Pfeiffer
             }
             catch (SqlException e)
             {
-                MessageBox.Show(string.Format("Chyba vložení do DB: {0}", e.Message));
+                MessageBox.Show("Chyba vložení do DB: {0}", e.Message);
 
             }
             finally
