@@ -20,9 +20,48 @@ namespace Piskvorky_Klient_Pfeiffer
     /// </summary>
     public partial class MainWindow : Window
     {
+        int[,] polePravidla = new int[11, 6];
+        public Databaze db;
+        
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void pripojeniDatabaze()
+        {
+            db = new Databaze(tbDatabaze.Text);      //TODO: zatim nefunkcni ve tride DATABAZE!!!funguje jako localhost
+
+            db.Pripojit();
+
+            lInfo.Content = "Připojeno k databázi";
+            tbDatabaze.IsEnabled = false;
+            btnPripojit.Content = "Odpojit";
+        }
+
+        private void odpojeniDatabaze()
+        {
+            //Databaze db = new Databaze(tbDatabaze.Text);
+
+            db.Odpojit();
+
+            lInfo.Content = "Odpojeno od databáze";
+            tbDatabaze.IsEnabled = true;
+            btnPripojit.Content = "Připojit";
+        }
+
+        private void btnPripojit_Click(object sender, RoutedEventArgs e)
+        {
+            if (tbDatabaze.IsEnabled == true)
+            {
+                pripojeniDatabaze();
+            }
+
+            else
+            {
+                odpojeniDatabaze();
+            }
+            
         }
     }
 }

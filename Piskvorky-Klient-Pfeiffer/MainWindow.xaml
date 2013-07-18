@@ -1,8 +1,16 @@
 ﻿<Window x:Class="Piskvorky_Klient_Pfeiffer.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Piskvorky - Klient | Lukáš Pfeiffer" Height="350" Width="525">
+        Title="Piskvorky - Klient | Lukáš Pfeiffer" Height="385" Width="766">
     <Grid>
-        
+        <TextBox x:Name="tbDatabaze" HorizontalAlignment="Left" Height="23" Margin="98,66,0,0" TextWrapping="Wrap" Text="127.0.0.1" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,0.5"/>
+        <Label x:Name="lInfo" Content="Vítejte v aplikaci Piškvorky - klient" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.658,0.731" Width="497"/>
+        <Button x:Name="btnPripojit" Content="Připojit" HorizontalAlignment="Left" Margin="98,94,0,0" VerticalAlignment="Top" Width="75" Click="btnPripojit_Click"/>
+        <Canvas x:Name="platno" HorizontalAlignment="Left" Height="150" Margin="598,10,0,0" VerticalAlignment="Top" Width="150"/>
+        <Label Content="IP serveru" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="150" Margin="598,10,0,0" VerticalAlignment="Top" Width="150"/>
+        <Canvas x:Name="platno2" HorizontalAlignment="Left" Height="150" Margin="598,165,0,0" VerticalAlignment="Top" Width="150"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="150" Margin="598,165,0,0" VerticalAlignment="Top" Width="150"/>
+
     </Grid>
 </Window>
